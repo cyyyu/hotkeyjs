@@ -21,7 +21,7 @@ The example blow shows how to say hello when people press 'a' on your web page.
 
 ```
 new HotKey('a', function(){
-	alert('Hello World!');
+    alert('Hello World!');
 })
 ```
 
@@ -29,20 +29,23 @@ If you want to capture 'ctrl+z' combination or 'ctrl+shift+z' combination and do
 
 ```
 new HotKey('ctrl+z', function(){
-	// do whatever you want
+    // do whatever you want
 })
 
 new HotKey('ctrl+shift+z', function(){
-	// do whatever you want
+    // do whatever you want
 })
 ```
 Even you want to capture 'cmd+r' combination, which in MacOS Chrome will cause refresh, you can use HotKey either:
 
 ```
 new HotKey('cmd+r', {preventDefault: true}, function(){
-	// do whatever you want
+    // do whatever you want
 })
 
 ```
 
+## Demo
+![][image-1]
 
+[image-1]:	./demo/demo.jpg "demo"
