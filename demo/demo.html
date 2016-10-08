@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>keyjs demo</title>
+	<meta charset="utf8">
+</head>
+<body>
+	<div id='fortest'></div>
+
+	<script type="text/javascript" src="../dest/hotkeyjs.min.js"></script>
+	<script type="text/javascript">
+
+		new HotKey('a', function(){
+			console.debug('123')
+		})
+
+		new HotKey('b', function(){
+			console.debug('456')
+		})
+
+		new HotKey('cmd + r' ,{preventDefault: true}, function(){
+			console.debug('789')
+		})
+
+	</script>
+</body>
+</html>
