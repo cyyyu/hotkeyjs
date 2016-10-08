@@ -2,23 +2,89 @@
 <head>
 	<title>keyjs demo</title>
 	<meta charset="utf8">
+	<style type="text/css">
+		html, body{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		#tom {
+			display: inline-block;
+			background: #f00;
+			width: 40px;
+			height: 40px;
+			border-radius: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			color: #fff;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-	<div id='fortest'></div>
+	<h1>Use 'w s a d' to control Tom. Press 'cmd + r' or 'ctrl + r' to reset</h1>
+	<span id='tom'>Tom</span>
 
 	<script type="text/javascript" src="../dest/hotkeyjs.min.js"></script>
 	<script type="text/javascript">
+		function Man(el){
+			this.el = document.getElementById(el);
 
-		new HotKey('a', function(){
-			console.debug('123')
+			this.el.style.position = 'absolute';
+			this.step = 5;
+
+			this.reset()
+		}
+
+		Man.prototype.move = function(target){
+
+			switch(target){
+				case 'up':
+					this.el.style.top = parseInt(this.el.style.top) - this.step;
+					break;
+				case 'down':
+					this.el.style.top = parseInt(this.el.style.top) + this.step;
+					break;
+				case 'left':
+					this.el.style.left = parseInt(this.el.style.left) - this.step;
+					break;
+				case 'right':
+					this.el.style.left = parseInt(this.el.style.left) + this.step;
+					break;
+			}
+
+		}
+
+		Man.prototype.reset = function(){
+			this.el.style.top = 200;
+			this.el.style.left = 600;
+		}
+
+		var Tom = new Man('tom')
+
+		new HotKey('w', function(){
+			Tom.move('up')
 		})
 
-		new HotKey('b', function(){
-			console.debug('456')
+		new HotKey('s', function(){
+			Tom.move('down')
+		})
+
+		new HotKey('a', function(){
+			Tom.move('left')
+		})
+
+		new HotKey('d', function(){
+			Tom.move('right')
 		})
 
 		new HotKey('cmd + r' ,{preventDefault: true}, function(){
-			console.debug('789')
+			Tom.reset()
 		})
 
 	</script>
