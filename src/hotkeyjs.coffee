@@ -58,7 +58,7 @@ class HotKey
 		key = ($event.key || (String.fromCharCode $event.keyCode)).toLowerCase()
 
 		if key is @key
-			@cb()
+			@cb $event
 
 	getSpecialKey: (key)->
 		keyarray = key.split '+'
