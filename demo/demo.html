@@ -15,16 +15,12 @@
 
 		#tom {
 			display: inline-block;
-			background: #f00;
+			background: transparent;
 			width: 40px;
 			height: 40px;
-			border-radius: 40px;
-			line-height: 40px;
-			font-size: 14px;
-			color: #fff;
-			text-align: center;
 			background-image: url('./tom.jpg');
 			background-size: 100% 100%;
+			transition: all .3s;
 		}
 	</style>
 </head>
@@ -38,7 +34,7 @@
 			this.el = document.getElementById(el);
 
 			this.el.style.position = 'absolute';
-			this.step = 5;
+			this.step = 25;
 
 			this.reset()
 		}
