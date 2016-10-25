@@ -48,4 +48,4 @@ new HotKey('cmd+r', {preventDefault: true}, function(){
 ## Demo
 ![][image-1]
 
-[image-1]:	./demo/demo.jpg "demo"
+[image-1]:	./demo/demo2.jpg "demo"
